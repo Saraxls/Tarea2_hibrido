@@ -10,6 +10,7 @@ Este efecto también se puede simular reduciendo la escala de la imagen híbrida
 #Cómo Funciona el Programa
 
 #1. Entrada
+
 El programa requiere dos imágenes de entrada del mismo tamaño. Si las imágenes no tienen el mismo tamaño, el programa ajustará la segunda imagen para que coincida con la primera.
 
 En el directorio imágenes/ del proyecto, encontrarás pares de imágenes listas para probar.
