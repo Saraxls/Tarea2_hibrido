@@ -18,11 +18,12 @@ El programa requiere dos imágenes de entrada del mismo tamaño. Si las imágene
 # 2. Proceso
 El programa aplica los siguientes filtros espaciales:
 
-Filtro Gaussiano (Low-pass):
+# Filtro Gaussiano (Low-pass):
 
 Este filtro suaviza la primera imagen, eliminando detalles de alta frecuencia.
 Resultado: Una versión borrosa de la imagen que resalta características generales.
-Filtro Laplaciano (High-pass):
+
+# Filtro Laplaciano (High-pass):
 
 Este filtro resalta los bordes y detalles finos de la segunda imagen.
 Resultado: Una imagen donde predominan las características de alta frecuencia.
@@ -49,6 +50,7 @@ pip install opencv-python numpy
 
 # 2. Configuración del Directorio
 Coloca tus imágenes en la carpeta imágenes/ o especifica sus rutas en el código.
+
 Edita las rutas en el archivo hybrid_image.py
 
 
