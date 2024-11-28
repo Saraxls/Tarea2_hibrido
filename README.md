@@ -32,6 +32,7 @@ Combinación de Imágenes:
 Las dos imágenes filtradas se combinan para formar una imagen híbrida.
 
 De cerca:  Se puede ver los detalles de la primera imagen.
+
 De lejos: Se nota las características de la segunda imagen.
 
 #  3. Salida
@@ -99,6 +100,8 @@ canal_hybrid = cv2.addWeighted(low_pass_channel, 0.5, high_pass_channel, 0.5, 0)
 El programa genera dos versiones de la imagen híbrida:
 
 Tamaño completo: Guardada como hybrid_full.jpg.
+
+
 Tamaño reducido (100x100 píxeles): Guardada como hybrid_small.jpg.
 
 
