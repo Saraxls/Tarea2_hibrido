@@ -30,14 +30,16 @@ Resultado: Una imagen donde predominan las características de alta frecuencia.
 Combinación de Imágenes:
 
 Las dos imágenes filtradas se combinan para formar una imagen híbrida.
-De cerca: Verás los detalles de la primera imagen.
-De lejos: Notarás las características de la segunda imagen.
+
+De cerca:  Se puede ver los detalles de la primera imagen.
+De lejos: Se nota las características de la segunda imagen.
 
 #  3. Salida
 
 El programa genera dos versiones de la imagen híbrida:
 
 Imagen híbrida completa: Una versión con la resolución original de las imágenes.
+
 Imagen híbrida reducida: Una versión de 100x100 píxeles que simula cómo se ve la imagen desde lejos.
 
 # Instrucciones para Ejecutar el Programa
@@ -49,9 +51,9 @@ Instala las librerías necesarias con el siguiente comando:
 pip install opencv-python numpy
 
 # 2. Configuración del Directorio
-Coloca tus imágenes en la carpeta imágenes/ o especifica sus rutas en el código.
+ Especificamos las   rutas en el código.
 
-Edita las rutas en el archivo hybrid_image.py
+ Las rutas en el archivo hybrid_image.py
 
 
 img1_path = "imágenes/imagen1.jpg"  
@@ -60,6 +62,7 @@ output_path = "imágenes/hybrid_full.jpg"
 small_output_path = "imágenes/hybrid_small.jpg"  # Salida en tamaño reducido
 
 # 3. Ejecución
+
 python hybrid_image.py
 
 # Detalles del Código
