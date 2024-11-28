@@ -57,12 +57,14 @@ small_output_path = "imágenes/hybrid_small.jpg"  # Salida en tamaño reducido
 #3. Ejecución
 python hybrid_image.py
 
-#Detalles del Código
+##Detalles del Código
 
 #Cargar Imágenes
+
 El programa utiliza cv2.imread para cargar las imágenes en formato color (BGR). Si las imágenes tienen tamaños diferentes, la segunda imagen se redimensiona automáticamente para que coincida con la primera.
 
 #Filtro Gaussiano (Low-pass)
+
 El filtro Gaussiano suaviza la primera imagen:
 
 cv2.GaussianBlur(canal, gaussian_kernel, sigmaX=sigma)
@@ -71,6 +73,7 @@ Kernel: (31, 31) (ajustable).
 Sigma: 15 (ajustable).
 
 #Filtro Laplaciano (High-pass)
+
 El filtro Laplaciano resalta los bordes y detalles finos de la segunda imagen:
 
 cv2.Laplacian(canal, cv2.CV_64F, ksize=laplacian_ksize)
@@ -84,6 +87,7 @@ cv2.normalize(filtro, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
 canal_hybrid = cv2.addWeighted(low_pass_channel, 0.5, high_pass_channel, 0.5, 0)
 
 #Generación de Resultados
+
 El programa genera dos versiones de la imagen híbrida:
 
 Tamaño completo: Guardada como hybrid_full.jpg.
