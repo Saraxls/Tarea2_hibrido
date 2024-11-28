@@ -7,15 +7,15 @@ De lejos: Sobresalen las características de alta frecuencia de la segunda image
 Este efecto también se puede simular reduciendo la escala de la imagen híbrida.
 
 
-#Cómo Funciona el Programa
+# Cómo Funciona el Programa
 
-#1. Entrada
+# 1. Entrada
 
 El programa requiere dos imágenes de entrada del mismo tamaño. Si las imágenes no tienen el mismo tamaño, el programa ajustará la segunda imagen para que coincida con la primera.
 
 En el directorio imágenes/ del proyecto, encontrarás pares de imágenes listas para probar.
 
-#2. Proceso
+# 2. Proceso
 El programa aplica los siguientes filtros espaciales:
 
 Filtro Gaussiano (Low-pass):
@@ -32,40 +32,41 @@ Las dos imágenes filtradas se combinan para formar una imagen híbrida.
 De cerca: Verás los detalles de la primera imagen.
 De lejos: Notarás las características de la segunda imagen.
 
-#3. Salida
+#  3. Salida
 
 El programa genera dos versiones de la imagen híbrida:
 
 Imagen híbrida completa: Una versión con la resolución original de las imágenes.
 Imagen híbrida reducida: Una versión de 100x100 píxeles que simula cómo se ve la imagen desde lejos.
 
-#Instrucciones para Ejecutar el Programa
+# Instrucciones para Ejecutar el Programa
 
-#1. Requisitos
+# 1. Requisitos
 Python 3.8 o superior.
 Instala las librerías necesarias con el siguiente comando:
 
 pip install opencv-python numpy
 
-#2. Configuración del Directorio
+# 2. Configuración del Directorio
 Coloca tus imágenes en la carpeta imágenes/ o especifica sus rutas en el código.
 Edita las rutas en el archivo hybrid_image.py
 
-img1_path = "imágenes/imagen1.jpg"  # Primera imagen (low-pass)
-img2_path = "imágenes/imagen2.jpg"  # Segunda imagen (high-pass)
-output_path = "imágenes/hybrid_full.jpg"  # Salida en tamaño completo
+
+img1_path = "imágenes/imagen1.jpg"  
+img2_path = "imágenes/imagen2.jpg"  
+output_path = "imágenes/hybrid_full.jpg"  
 small_output_path = "imágenes/hybrid_small.jpg"  # Salida en tamaño reducido
 
-#3. Ejecución
+# 3. Ejecución
 python hybrid_image.py
 
-##Detalles del Código
+# Detalles del Código
 
-#Cargar Imágenes
+# Cargar Imágenes
 
 El programa utiliza cv2.imread para cargar las imágenes en formato color (BGR). Si las imágenes tienen tamaños diferentes, la segunda imagen se redimensiona automáticamente para que coincida con la primera.
 
-#Filtro Gaussiano (Low-pass)
+# Filtro Gaussiano (Low-pass)
 
 El filtro Gaussiano suaviza la primera imagen:
 
@@ -74,21 +75,21 @@ cv2.GaussianBlur(canal, gaussian_kernel, sigmaX=sigma)
 Kernel: (31, 31) (ajustable).
 Sigma: 15 (ajustable).
 
-#Filtro Laplaciano (High-pass)
+# Filtro Laplaciano (High-pass)
 
 El filtro Laplaciano resalta los bordes y detalles finos de la segunda imagen:
 
 cv2.Laplacian(canal, cv2.CV_64F, ksize=laplacian_ksize)
 
-#Normalización
+# Normalización
 
 cv2.normalize(filtro, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
 
-#Combinación de Imágenes
+# Combinación de Imágenes
 
 canal_hybrid = cv2.addWeighted(low_pass_channel, 0.5, high_pass_channel, 0.5, 0)
 
-#Generación de Resultados
+# Generación de Resultados
 
 El programa genera dos versiones de la imagen híbrida:
 
